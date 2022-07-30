@@ -2,7 +2,7 @@
 
 # Debugging
 #printenv
-#pwd
+pwd
 #ls -la /opt
 ls -la /opt/piavpn-manual
 
