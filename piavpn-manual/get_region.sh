@@ -1,4 +1,4 @@
-#!/usr/bin/env ash
+#!/usr/bin/env bash
 # Copyright (C) 2020 Private Internet Access, Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -160,7 +160,7 @@ if [[ $selectedRegion == "none" ]]; then
   echo -e Testing regions that respond \
     faster than "${green}$MAX_LATENCY${nc}" seconds:
   selectedRegion="$(echo "$summarized_region_data" |
-    xargs -I{} ash -c 'printServerLatency {}' |
+    xargs -I{} bash -c 'printServerLatency {}' |
     sort | head -1 | awk '{ print $2 }')"
   echo
 
