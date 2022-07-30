@@ -13,5 +13,6 @@ FROM base
 COPY --from=builder /opt/pia/*.sh /opt/pia/
 COPY --from=builder /opt/pia/*.crt /opt/pia/
 COPY --from=builder /opt/pia/openvpn_config /opt/pia/openvpn_config
+COPY entrypoint.sh /opt/entrypoint.sh
 
-ENTRYPOINT ["/etc/openvpn/pia/entrypoint.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
