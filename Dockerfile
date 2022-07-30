@@ -18,4 +18,3 @@ RUN chmod 755 /etc/openvpn/pia/pia_port_fw.sh /etc/openvpn/pia/forward-port.sh /
 RUN curl -o openvpn.zip https://www.privateinternetaccess.com/openvpn/openvpn.zip && unzip openvpn.zip
 
 ENTRYPOINT ["/etc/openvpn/pia/entrypoint.sh"]
-docker
