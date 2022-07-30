@@ -12,6 +12,8 @@ iplocal=$ifconfig_local
 ipremote=$ifconfig_remote
 gw=$route_vpn_gateway
 
+printenv
+
 #if [ -z $int ] || [ -z $iplocal ] || [ -z $ipremote ] || [ -z $gw ]; then
 #  echo "No env vars found. Use this script with an OpenVPN config file "
 #  exit 1
