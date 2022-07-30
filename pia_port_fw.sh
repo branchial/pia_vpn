@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/usr/bin/env bash
 # Get forward port info from PIA server
 
 client_id=$(head -n 100 /dev/urandom | sha256sum | tr -d " -")

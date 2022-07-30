@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/usr/bin/env bash
 # script used by OpenVPN to setup a route on Linux.
 # used in conjunction with OpenVPN config file options
 # script-security 2, route-noexec, route-up

@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/usr/bin/env bash
 
 exitOnError(){
   # $1 must be set to $?
