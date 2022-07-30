@@ -19,6 +19,5 @@ COPY --from=builder /opt/pia/*.crt /opt/pia/
 COPY --from=builder /opt/pia/openvpn_config/. /opt/pia/openvpn_config/
 COPY entrypoint.sh /opt/entrypoint.sh
 RUN ["chmod", "+x", "/opt/entrypoint.sh"]
-RUN ["ls -la /opt/pia"]
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
