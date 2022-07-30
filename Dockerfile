@@ -5,9 +5,7 @@ RUN apk upgrade --available
 RUN apk add curl jq openvpn
 WORKDIR /opt
 
-COPY piavpn-manual /opt
-RUN ["chmod", "+x", "/opt/piavpn-manual/run_setup.sh"]
-
+ADD piavpn-manual /opt
 COPY entrypoint.sh /opt/entrypoint.sh
 RUN ["chmod", "+x", "/opt/entrypoint.sh"]
 
