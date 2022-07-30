@@ -16,6 +16,7 @@ RUN mkdir -p /opt/pia/openvpn_config
 COPY --from=builder /opt/pia/*.sh /opt/pia/
 COPY --from=builder /opt/pia/*.crt /opt/pia/
 COPY --from=builder /opt/pia/openvpn_config/. /opt/pia/openvpn_config/
-COPY entrypoint.sh /opt/pia/entrypoint.sh
+COPY entrypoint.sh /opt/entrypoint.sh
+RUN ["chmod", "+x", "/opt/entrypoint.sh"]
 
-ENTRYPOINT ["/opt/pia/entrypoint.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
