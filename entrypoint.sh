@@ -5,4 +5,4 @@
 #pwd
 #ls -la /opt/pia
 
-/opt/pia/run_setup.sh
+/opt/piavpn-manual/run_setup.sh
