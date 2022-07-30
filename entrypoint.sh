@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-printenv
+#printenv
 /opt/pia/run_setup.sh
