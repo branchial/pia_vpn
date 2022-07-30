@@ -2,7 +2,7 @@
 
 # Debugging
 #printenv
-pwd
-ls -la /opt/pia
+#pwd
+#ls -la /opt/pia
 
 /opt/pia/run_setup.sh
