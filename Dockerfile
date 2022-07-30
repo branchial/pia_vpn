@@ -6,7 +6,7 @@ RUN apk add curl jq openvpn findutils
 WORKDIR /opt
 
 ADD piavpn-manual /opt/piavpn-manual
-RUN ["find piavpn-manual/ -type f -iname \"*.sh\" -exec chmod +x {} \;"]
+RUN find piavpn-manual/ -type f -iname '*.sh*' -exec chmod +x {} \;
 
 COPY entrypoint.sh /opt/entrypoint.sh
 RUN ["chmod", "+x", "entrypoint.sh"]
