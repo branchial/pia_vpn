@@ -1,6 +1,8 @@
 FROM alpine:3.16
 
 RUN apk update
+RUN apk add --upgrade apk-tools
+RUN apk upgrade --available
 RUN apk add openvpn curl unzip
 RUN mkdir -p /etc/openvpn/pia
 
