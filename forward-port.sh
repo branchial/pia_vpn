@@ -9,7 +9,7 @@
 ovpnpia="/etc/openvpn/pia"
 int=$dev
 iplocal=$ifconfig_local
-ipremote=$ifconfig_remote
+ipremote=$trusted_ip
 gw=$route_vpn_gateway
 
 printenv
