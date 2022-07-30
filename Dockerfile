@@ -1,20 +1,17 @@
-FROM alpine:3.16
-
+FROM alpine:3.16 as base
 RUN apk update
 RUN apk add --upgrade apk-tools
 RUN apk upgrade --available
-RUN apk add openvpn curl unzip
-RUN mkdir -p /etc/openvpn/pia
+RUN apk add curl jq openvpn
+WORKDIR /opt/
 
-WORKDIR /etc/openvpn/pia
+FROM base as builder
+RUN apk add git
+RUN git clone https://github.com/pia-foss/manual-connections.git pia
 
-COPY pia.conf /etc/openvpn/pia/pia.conf
-COPY proto.conf /etc/openvpn/pia/proto.conf
-COPY pia_port_fw.sh /etc/openvpn/pia/pia_port_fw.sh
-COPY forward-port.sh /etc/openvpn/pia/forward-port.sh
-COPY entrypoint.sh /etc/openvpn/pia/entrypoint.sh
-
-RUN chmod 755 /etc/openvpn/pia/pia_port_fw.sh /etc/openvpn/pia/forward-port.sh /etc/openvpn/pia/entrypoint.sh
-RUN curl -o openvpn.zip https://www.privateinternetaccess.com/openvpn/openvpn.zip && unzip openvpn.zip
+FROM base
+COPY --from=builder /opt/pia/*.sh /opt/pia
+COPY --from=builder /opt/pia/*.crt /opt/pia
+COPY --from=builder /opt/pia/openvpn_config /opt/pia/openvpn_config
 
 ENTRYPOINT ["/etc/openvpn/pia/entrypoint.sh"]
