@@ -2,7 +2,7 @@ FROM alpine:3.16 as base
 RUN apk update
 RUN apk add --upgrade apk-tools
 RUN apk upgrade --available
-RUN apk add curl jq openvpn
+RUN apk add curl jq openvpn find
 WORKDIR /opt
 
 COPY piavpn-manual /opt
