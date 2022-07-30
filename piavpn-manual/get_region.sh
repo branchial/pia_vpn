@@ -160,7 +160,7 @@ if [[ $selectedRegion == "none" ]]; then
   echo -e Testing regions that respond \
     faster than "${green}$MAX_LATENCY${nc}" seconds:
   selectedRegion="$(echo "$summarized_region_data" |
-    xargs -I{} bash -c 'printServerLatency {}' |
+    xargs -I{} ash -c 'printServerLatency {}' |
     sort | head -1 | awk '{ print $2 }')"
   echo
 
